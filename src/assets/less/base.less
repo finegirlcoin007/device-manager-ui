@@ -1,0 +1,356 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+html * {
+  outline: 0;
+  box-sizing: inherit;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  // min-height: 100%;
+  font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, STHeiTi, Arial,
+    sans-serif;
+}
+
+body {
+  overflow-y: auto;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+select,
+textarea,
+button {
+  font-size: 100%;
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+// h1,h2,h3,h4,h5,h6 {
+// 	font-size: 100%;
+// 	font-weight: 500
+// }
+
+q:before,
+q:after {
+  content: "";
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+ins,
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ============================================================
+   flex：定义布局为盒模型
+   flex-v：盒模型垂直布局
+   flex-1：子元素占据剩余的空间
+   flex-align-center：子元素垂直居中
+   flex-pack-center：子元素水平居中
+   flex-pack-justify：子元素两端对齐
+   兼容性：ios 4+、android 2.3+、winphone8+
+   ============================================================ */
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-v {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.flex-align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.flex-pack-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.flex-pack-justify {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+    font-size: 0;
+  }
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.hide {
+  display: none;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+#app{
+  height: 100%;
+}
+.pages {
+  .flex;
+  .flex-v;
+  height: 100%;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+[disabled] {
+  pointer-events: none;
+}
+
+.el-dialog {
+  .el-checkbox-group {
+    .el-checkbox {
+      margin: 5px 0;
+      width: 33.33%;
+    }
+
+    .pointBox {
+      width: 50%;
+    }
+  }
+}
+
+.table-foot {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.el-table th {
+  user-select: all;
+}
+
+/* el-table列数据为空自动显示-- */
+.cell:empty::before {
+  content: "--";
+  color: gray;
+}
+
+.el-progress-bar {
+  padding-right: 70px;
+  margin-right: -70px;
+}
+
+#operatorUserCabinCheckBox .el-checkbox {
+  white-space: normal !important;
+  width: 100%;
+}
+
+#operatorUserCabinCheckBox .el-checkbox__label {
+  display: inline;
+}
+
+// 统计页面隔日期变色
+.page-statistics {
+  .chart {
+    margin-bottom: 80px;
+    border: 1px solid #ededed;
+    height: 400px;
+  }
+
+  .el-table th,
+  .el-table tr {
+    &.color-gray {
+      background-color: #f0f9eb;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .page {
+    margin: 5px 5px;
+  }
+
+  .el-dialog {
+    width: 98% !important;
+
+    .el-checkbox-group {
+      .el-checkbox {
+        margin: 5px 0;
+        width: 50%;
+        font-size: 12px;
+
+        .el-checkbox__label {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+// .is-active{
+// 	background-color: red;
+// }
+
+.mobile-table-card {
+  margin: 10px auto;
+  padding: 10px;
+  box-shadow: 0 0 5px #ccc;
+
+  .mobile-table-cell {
+    padding: 5px 0;
+    border-bottom: 1px dotted #eee;
+
+    .cell-title {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .cell-content {
+      padding-left: 5px;
+      text-align: right;
+      word-break: break-word;
+    }
+  }
+}
